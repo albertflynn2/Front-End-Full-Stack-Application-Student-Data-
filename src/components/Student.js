@@ -15,7 +15,7 @@ const[students,setStudents]=useState([]);
         e.preventDefault()
         const student={name,address}
         console.log(student)
-        fetch("http://localhost:8080/student/add",{
+        fetch("https://front-end-full-stack-application-student-data.vercel.app/student/add",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(student)
@@ -26,7 +26,7 @@ const[students,setStudents]=useState([]);
     }
 
     useEffect(()=>{
-        fetch("http://localhost:8080/student/getAll")
+        fetch("https://front-end-full-stack-application-student-data.vercel.app/student/getAll")
         .then(res=>res.json())
         .then((result)=>{
           setStudents(result);
